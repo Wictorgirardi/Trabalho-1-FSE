@@ -30,8 +30,8 @@ int connect_uart() {
 }
 
 void write_uart_get(int filestream, unsigned char code) {
-  unsigned char package[7] = {0x01, 0x23, code, 0x06,
-                              0x01, 0x05, 0x05};
+  unsigned char package[7] = {0x01, 0x23, code, 0x07,
+                              0x03, 0x02, 0x06};
   short crc = calcula_CRC(package, 7);
   unsigned char msg[9];
   memcpy(msg, &package, 7);
